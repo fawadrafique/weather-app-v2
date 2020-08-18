@@ -21,7 +21,7 @@ clickOutside.addEventListener('click', () => {
 
 
 constants.searchPlaces.addListener('places_changed', () => {
-    const place = searchPlaces.getPlaces()[0]
+    const place = constants.searchPlaces.getPlaces()[0]
     let city = place.vicinity
     place.address_components.forEach((component) => {
         if (component.types[0] == "country") {
@@ -31,7 +31,7 @@ constants.searchPlaces.addListener('places_changed', () => {
     if (place == null) return
     let latitude = place.geometry.location.lat()
     let longitude = place.geometry.location.lng()
-    display(place)
+    console.log(place)
     search.addEventListener('click', (e) => {
         e.preventDefault();
         inputField.value = ''
