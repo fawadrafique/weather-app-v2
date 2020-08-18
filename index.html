@@ -13,7 +13,7 @@
     src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.min.js"></script>
   <script defer type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbIMyRDgay42Q3-F91m6fk36g9OJjgrk4&libraries=places"></script>
-  <script defer src="js/index.js"></script>
+  <script type="module" defer src="js/index.js"></script>
   <title>Weather Forecast</title>
 </head>
 
@@ -24,28 +24,52 @@
 
       <div class="flex flex-wrap w-full lg:w-auto opacity-90">
         <div class="w-full lg:w-1/2 flex bg-auto">
-          <div class="p-6 w-full bg-blue-400 text-white">
-            <div id="toogleMenu" class="">
-              <div class="absolute">
-                <i class="fas fa-ellipsis-v mt-5 mr-4 text-gray-800 font-bold"></i>
-              </div>
-            </div>
-            <div id="searchOpen" class="flex justify-end">
-              <div class="absolute">
-                <i class="fas fa-search mt-5 mr-4 text-gray-800 font-bold"></i>
-              </div>
-            </div>
-            <div id="searchBox" class="container mx-auto hidden w-full">
-              <div class="flex justify-end ">
-                <div class="absolute">
-                  <form class="mt-2 mb-4 flex w-full">
-                    <input class="w-full p-2 border-t border-b border-l text-gray-800 border-gray-200 bg-white"
-                      type="text" placeholder="Search for a city..." placesearch />
-                    <span id="searchClose" class="bg-yellow-400 text-gray-800 font-bold p-2 px-4 border-yellow-500"><i
-                        class="fas fa-plus transform rotate-45"></i>
+          <div class="p-6 w-full bg-blue-400 text-white relative">
+            <div class="mx-auto relative z-10">
+              <button id="toggleMenu" class="relative z-10 block overflow-hidden pr-1 focus:outline-none">
+                <i class="fas fa-ellipsis-v text-gray-800 font-bold"></i>
+              </button>
+              <button id="clickOutside" tabindex="-1" class="fixed inset-0 h-full w-full cursor-default"></button>
+              <div id="menuBox" class="absolute top-auto mt-1 py-2 w-72 bg-white rounded-lg shadow-xl hidden">
+                <form class="block px-4 py-2">
+                  <input id="inputField" class="p-2 border-t border-b border-l text-gray-800 border-gray-200 bg-white"
+                    type="text" placeholder="Search for a city..." placesearch />
+                  <button id="search"
+                    class="bg-yellow-400 text-gray-800 font-bold p-2 px-4 border-yellow-500 focus:outline-none"><i
+                      class="fas fa-search"></i>
+                  </button>
+                </form>
+                <div id="menuBox1" class="px-4 py-2 text-gray-800 font-bold grid grid-cols-2">
+                  <div class="font-normal">
+                    <span>Ghent</span>
+                    <span class="block">
+                      <span class="text-xs">L </span><span class="text-sm">29º - </span><span class="text-xs">H</span>
+                      <span class="text-sm">19º</span>
                     </span>
-                  </form>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <i class="wi wi-day-sunny text-3xl"></i>
+                    <button id="" class="text-gray-700 focus:outline-none opacity-10 hover:opacity-90"><i
+                        class="fas fa-plus fa-lg transform rotate-45"></i>
+                    </button>
+                  </div>
                 </div>
+                <div id="menuBox2" class="px-4 py-2 text-gray-800 font-bold grid grid-cols-2">
+                  <div class="font-normal">
+                    <span>Ghent</span>
+                    <span class="block">
+                      <span class="text-xs">L </span><span class="text-sm">29º - </span><span class="text-xs">H</span>
+                      <span class="text-sm">19º</span>
+                    </span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <i class="wi wi-day-sunny text-3xl"></i>
+                    <button id="" class="text-gray-700 focus:outline-none opacity-10 hover:opacity-90"><i
+                        class="fas fa-plus fa-lg transform rotate-45"></i>
+                    </button>
+                  </div>
+                </div>
+
               </div>
             </div>
             <div class="mb-8 mt-16 text-center">
