@@ -16,7 +16,8 @@ A weather app with the following nice features:
 - Shows random background photo of the city they entered in the form.
 - Mobile friendly app
 
-### Dependencies:
+## Dependencies
+
 - [Chart.js](https://www.chartjs.org/docs/latest/)
 - [Unsplash API](https://unsplash.com/developers)
 - [Google Places API](https://cloud.google.com/maps-platform/places/)
