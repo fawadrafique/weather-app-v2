@@ -17,6 +17,7 @@ A weather app with the following nice features:
 - Mobile friendly app
 
 ### Dependencies:
-- Chart.js
-- Unsplash API
-- Google Places API
+- [Chart.js](https://www.chartjs.org/docs/latest/)
+- [Unsplash API](https://unsplash.com/developers)
+- [Google Places API](https://cloud.google.com/maps-platform/places/)
+- [Weather Icons](https://erikflowers.github.io/weather-icons/)
