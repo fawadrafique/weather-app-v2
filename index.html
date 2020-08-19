@@ -40,40 +40,29 @@
                       class="fas fa-search"></i>
                   </button>
                 </form>
-                <div id="menuBox1" class="px-4 py-2 text-gray-800 font-bold grid grid-cols-2">
+                <div id="menuBox1" class="px-4 py-2 text-gray-800 font-bold flex justify-between items-center">
                   <div class="font-normal">
-                    <span>Ghent</span>
-                    <span class="block">
-                      <span class="text-xs">L </span><span class="text-sm">29º - </span><span class="text-xs">H</span>
-                      <span class="text-sm">19º</span>
+                    <span id="city1"></span>
+                    <span id="temp1" class="block">
                     </span>
                   </div>
-                  <div class="flex justify-between items-center">
-                    <i class="wi wi-day-sunny text-3xl"></i>
-                    <button id="" class="text-gray-700 focus:outline-none opacity-10 hover:opacity-90"><i
-                        class="fas fa-plus fa-lg transform rotate-45"></i>
-                    </button>
+                  <div id="icon1">
                   </div>
                 </div>
-                <div id="menuBox2" class="px-4 py-2 text-gray-800 font-bold grid grid-cols-2">
+                <div id="menuBox2" class="px-4 py-2 text-gray-800 font-bold flex justify-between  items-center">
                   <div class="font-normal">
-                    <span>Ghent</span>
-                    <span class="block">
-                      <span class="text-xs">L </span><span class="text-sm">29º - </span><span class="text-xs">H</span>
-                      <span class="text-sm">19º</span>
+                    <span id="city2"></span>
+                    <span id="temp2" class="block">
+
                     </span>
                   </div>
-                  <div class="flex justify-between items-center">
-                    <i class="wi wi-day-sunny text-3xl"></i>
-                    <button id="" class="text-gray-700 focus:outline-none opacity-10 hover:opacity-90"><i
-                        class="fas fa-plus fa-lg transform rotate-45"></i>
-                    </button>
+                  <div id="icon2">
                   </div>
                 </div>
 
               </div>
             </div>
-            <div class="mb-8 mt-16 text-center">
+            <div class="mb-8 mt-6 text-center">
               <h2 id="city" class="text-2xl inline-flex leading-none pb-1">Brussels, BE</h2>
               <h3 id="day" class="leading-none pb-2 opacity-75">Thursday, 13 August 2020</h3>
             </div>
@@ -207,7 +196,7 @@
                 <span class="block text-90">
                   Wind
                 </span>
-                <span id="windSpeed">12 Mph</span>
+                <span id="windSpeed">12 km/h</span>
               </div>
             </div>
           </div>
@@ -215,7 +204,11 @@
       </div>
     </div>
   </div>
-  <footer id="footer" class="text-center text-gray-900"></footer>
+  <footer class="flex justify-between text-gray-900 px-5">
+    <span id="footer"></span>
+    <a href="https://github.com/fawadrafique/weather-app-v2">GitHub <i class="fab fa-github"> </i>
+    </a>
+  </footer>
 </body>
 
 </html>
