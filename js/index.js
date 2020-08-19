@@ -6,7 +6,7 @@ import {
     apiKey,
     updatePlace
 } from './variables.js';
-
+import getDay from './updateday.js';
 import handleFetch from './handlefetch.js';
 
 
@@ -40,14 +40,20 @@ searchPlaces.addListener('places_changed', () => {
     longitude = place.geometry.location.lng()
     console.log(place)
     cityAndCountry = `${city}, ${country}`;
+})
+search.addEventListener('click', (e) => {
+    e.preventDefault();
+    inputField.value = ''
+    init(latitude, longitude, cityAndCountry);
 
-    search.addEventListener('click', (e) => {
+})
+inputField.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
         e.preventDefault();
         inputField.value = ''
         init(latitude, longitude, cityAndCountry);
-
-    })
-})
+    }
+});
 
 function init(lat, lon, place) {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&units=metric&appid=${apiKey}`)
@@ -55,7 +61,6 @@ function init(lat, lon, place) {
             return response.json()
         })
         .then(handleFetch);
+    getDay();
     updatePlace.textContent = place;
-
-
 }
