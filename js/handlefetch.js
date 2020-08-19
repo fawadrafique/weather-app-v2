@@ -1,4 +1,3 @@
-import getDay from './updateday.js';
 import weather from './currentweather.js';
 import updateBackground from './background.js';
 import updateForecast from './forecast.js';
@@ -12,7 +11,6 @@ import {
 
 function handleFetch(data) {
     weather(data);
-    getDay();
     addWidget(data, cityAndCountry)
     updateForecast(data);
     updateBackground(city);
