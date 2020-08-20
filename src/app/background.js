@@ -12,7 +12,6 @@ const unsplash = new Unsplash({
 
 
 function updateBackground(city) {
-    //console.log(accessKey);
     unsplash.search.photos(city, 1, 10, {
             orientation: "landscape"
         })
