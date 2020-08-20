@@ -6,3 +6,6 @@ css
 
 # production
 build
+
+# environment variables
+.env

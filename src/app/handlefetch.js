@@ -13,7 +13,7 @@ function handleFetch(data) {
     weather(data);
     addWidget(data, cityAndCountry)
     updateForecast(data);
-    updateBackground(city);
+    updateBackground(cityAndCountry);
     updateChart(data);
 }
 export default handleFetch;

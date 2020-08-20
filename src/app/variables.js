@@ -1,3 +1,4 @@
+//require('dotenv').config();
 const search = document.querySelector('#search');
 const inputField = document.querySelector('#inputField');
 const menuBox = document.querySelector('#menuBox');
@@ -18,9 +19,8 @@ const feelT = document.querySelector('#feelslike');
 const footer = document.querySelector('#footer');
 const chart = document.querySelector('#chart').getContext('2d');
 const searchPlaces = new google.maps.places.SearchBox(inputField);
+//const API_KEY_SPLASH = process.env.API_KEY_SPLASH;
 const apiKey = `94bc76131465087810a5fcee2f66defe`;
-
-
 
 
 

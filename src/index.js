@@ -4,7 +4,7 @@ import {
     search,
     searchPlaces,
     apiKey,
-    updatePlace
+    updatePlace,
 } from './app/variables.js';
 import getDay from './app/updateday.js';
 import handleFetch from './app/handlefetch.js';
@@ -16,6 +16,7 @@ import handleFetch from './app/handlefetch.js';
 export let cityAndCountry, latitude, longitude, city, country;
 
 window.onload = () => {
+    //console.log(API_KEY_SPLASH);
     cityAndCountry = 'Brussels, BE'
     init(50.85, 4.35, cityAndCountry);
 }
