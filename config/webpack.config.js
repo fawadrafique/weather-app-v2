@@ -1,5 +1,5 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('../node_modules/html-webpack-plugin');
+var HtmlWebpackPlugin = require('../node_modules/html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -9,4 +9,16 @@ module.exports = {
       template: './src/template.html',
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          // eslint options (if necessary)
+        },
+      },
+    ],
+  },
 };
