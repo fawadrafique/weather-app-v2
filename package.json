@@ -7,7 +7,8 @@
   "scripts": {
     "build-css": "tailwindcss build src/style/tailwind.css -o src/style/styles.css",
     "start": "webpack-dev-server --config config/webpack.dev.js --port 3000 --open",
-    "build": "webpack --config config/webpack.prod.js"
+    "build": "webpack --config config/webpack.prod.js",
+    "lint": "./node_modules/.bin/eslint src/index.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,16 @@
     "unsplash-js": "^6.0.0"
   },
   "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "html-webpack-plugin": "^4.3.0",
+    "prettier": "^2.0.5",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
