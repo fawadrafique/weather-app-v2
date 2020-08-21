@@ -41039,7 +41039,7 @@ var _formUrlencoded = __webpack_require__(/*! form-urlencoded */ "./node_modules
 
 var _formUrlencoded2 = _interopRequireDefault(_formUrlencoded);
 
-var _urlParse = __webpack_require__(/*! url-parse */ "./node_modules/unsplash-js/node_modules/url-parse/index.js");
+var _urlParse = __webpack_require__(/*! url-parse */ "./node_modules/url-parse/index.js");
 
 var _urlParse2 = _interopRequireDefault(_urlParse);
 
@@ -41087,10 +41087,10 @@ function buildFetchOptions(options) {
 
 /***/ }),
 
-/***/ "./node_modules/unsplash-js/node_modules/url-parse/index.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/unsplash-js/node_modules/url-parse/index.js ***!
-  \******************************************************************/
+/***/ "./node_modules/url-parse/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/url-parse/index.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41528,7 +41528,7 @@ Url.qs = qs;
 
 module.exports = Url;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -41749,16 +41749,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-function handleFetch(data) {
-    Object(_currentweather_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data);
-    Object(_widget_js__WEBPACK_IMPORTED_MODULE_4__["default"])(data, _index_js__WEBPACK_IMPORTED_MODULE_5__["cityAndCountry"])
-    Object(_forecast_js__WEBPACK_IMPORTED_MODULE_2__["default"])(data);
-    Object(_background_js__WEBPACK_IMPORTED_MODULE_1__["default"])(_index_js__WEBPACK_IMPORTED_MODULE_5__["cityAndCountry"]);
-    Object(_updatechart_js__WEBPACK_IMPORTED_MODULE_3__["default"])(data);
+async function handleFetch(data) {
+  await Object(_currentweather_js__WEBPACK_IMPORTED_MODULE_0__["default"])(data);
+  await Object(_widget_js__WEBPACK_IMPORTED_MODULE_4__["default"])(data, _index_js__WEBPACK_IMPORTED_MODULE_5__["cityAndCountry"]);
+  await Object(_forecast_js__WEBPACK_IMPORTED_MODULE_2__["default"])(data);
+  await Object(_background_js__WEBPACK_IMPORTED_MODULE_1__["default"])(_index_js__WEBPACK_IMPORTED_MODULE_5__["cityAndCountry"]);
+  await Object(_updatechart_js__WEBPACK_IMPORTED_MODULE_3__["default"])(data);
 }
 /* harmony default export */ __webpack_exports__["default"] = (handleFetch);
+
 
 /***/ }),
 
@@ -42043,62 +42042,60 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
 let cityAndCountry, latitude, longitude, city, country;
 
 window.onload = () => {
-    //console.log(API_KEY_SPLASH);
-    cityAndCountry = 'Brussels, BE'
-    init(50.85, 4.35, cityAndCountry);
-}
+  //console.log(API_KEY_SPLASH);
+  cityAndCountry = 'Brussels, BE';
+  init(50.85, 4.35, cityAndCountry);
+};
 
 _app_variables_js__WEBPACK_IMPORTED_MODULE_0__["toggleMenu"].addEventListener('click', () => {
-    menuBox.classList.toggle('hidden')
-})
+  _app_variables_js__WEBPACK_IMPORTED_MODULE_0__["menuBox"].classList.toggle('hidden');
+});
 _app_variables_js__WEBPACK_IMPORTED_MODULE_0__["clickOutside"].addEventListener('click', () => {
-    menuBox.classList.add('hidden')
-})
-
-_app_variables_js__WEBPACK_IMPORTED_MODULE_0__["searchPlaces"].addListener('places_changed', () => {
-    const place = _app_variables_js__WEBPACK_IMPORTED_MODULE_0__["searchPlaces"].getPlaces()[0]
-    city = place.vicinity
-    place.address_components.forEach((component) => {
-        if (component.types[0] == "country") {
-            country = component.short_name;
-        }
-    });
-    if (place == null) return
-    latitude = place.geometry.location.lat()
-    longitude = place.geometry.location.lng()
-    console.log(place)
-    cityAndCountry = `${city}, ${country}`;
-})
-_app_variables_js__WEBPACK_IMPORTED_MODULE_0__["search"].addEventListener('click', (e) => {
-    e.preventDefault();
-    inputField.value = ''
-    init(latitude, longitude, cityAndCountry);
-
-})
-inputField.addEventListener('keyup', (e) => {
-    if (e.keyCode === 13) {
-        e.preventDefault();
-        inputField.value = ''
-        init(latitude, longitude, cityAndCountry);
-    }
+  _app_variables_js__WEBPACK_IMPORTED_MODULE_0__["menuBox"].classList.add('hidden');
 });
 
-function init(lat, lon, place) {
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&units=metric&appid=${_app_variables_js__WEBPACK_IMPORTED_MODULE_0__["apiKey"]}`)
-        .then((response) => {
-            return response.json()
-        })
-        .then(_app_handlefetch_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
-    Object(_app_updateday_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
-    _app_variables_js__WEBPACK_IMPORTED_MODULE_0__["updatePlace"].textContent = place;
+_app_variables_js__WEBPACK_IMPORTED_MODULE_0__["searchPlaces"].addListener('places_changed', () => {
+  const place = _app_variables_js__WEBPACK_IMPORTED_MODULE_0__["searchPlaces"].getPlaces()[0];
+  city = place.vicinity;
+  place.address_components.forEach((component) => {
+    if (component.types[0] === 'country') {
+      country = component.short_name;
+    }
+  });
+  if (place == null) return;
+  latitude = place.geometry.location.lat();
+  longitude = place.geometry.location.lng();
+  console.log(place);
+  cityAndCountry = `${city}, ${country}`;
+});
+_app_variables_js__WEBPACK_IMPORTED_MODULE_0__["search"].addEventListener('click', (e) => {
+  e.preventDefault();
+  _app_variables_js__WEBPACK_IMPORTED_MODULE_0__["inputField"].value = '';
+  init(latitude, longitude, cityAndCountry);
+});
+_app_variables_js__WEBPACK_IMPORTED_MODULE_0__["inputField"].addEventListener('keyup', (e) => {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    _app_variables_js__WEBPACK_IMPORTED_MODULE_0__["inputField"].value = '';
+    init(latitude, longitude, cityAndCountry);
+  }
+});
+
+async function init(lat, lon, place) {
+  fetch(
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&units=metric&appid=${_app_variables_js__WEBPACK_IMPORTED_MODULE_0__["apiKey"]}`,
+  )
+    .then((response) => {
+      return response.json();
+    })
+    .then(_app_handlefetch_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  Object(_app_updateday_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  _app_variables_js__WEBPACK_IMPORTED_MODULE_0__["updatePlace"].textContent = place;
 }
+
 
 /***/ })
 

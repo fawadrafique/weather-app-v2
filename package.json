@@ -7,6 +7,7 @@
   "scripts": {
     "build-css": "tailwindcss build src/style/tailwind.css -o src/style/styles.css",
     "start": "webpack-dev-server --config config/webpack.dev.js --port 3000 --open",
+    "dev": "webpack --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",
     "lint": "./node_modules/.bin/eslint src/index.js"
   },
