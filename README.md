@@ -25,6 +25,14 @@ A weather app with the following nice features:
 
 In the project directory, you can run:
 
+### `npm run build-css`
+
+Add the utility or changes made in the `src/style/tailwind.css` css stylesheet file into `src/style/styles.css`.
+
+### `npm run lint`
+
+Checks teh code-quality using airbnb style guide and catches bugs early, makes the code cleaner.
+
 ### `npm start`
 
 Runs the app in the development mode.</br>
