@@ -14,7 +14,6 @@ import handleFetch from './app/handlefetch.js';
 export let cityAndCountry, latitude, longitude, city, country;
 
 window.onload = () => {
-  //console.log(API_KEY_SPLASH);
   cityAndCountry = 'Brussels, BE';
   init(50.85, 4.35, cityAndCountry);
 };
