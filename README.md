@@ -14,7 +14,7 @@ A weather app with the following nice features:
 - Displays the weather forcast for the next 6 days.
 - Display a line graph of temperature over time.
 - Shows random background photo of the city they entered in the form.
-- Mobile friendly app
+- App is responsive and mobile friendly.
 
 ## Dependencies
 
